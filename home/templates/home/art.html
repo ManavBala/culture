@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block title %} Test Video Page {% endblock %}
+
+
+{% block content %}
+<div class="jumbotron" style="background: none;">
+    <div class="alert alert-success" id="likeAlert" style="display: none; width: 75%;"></div>
+    <div class="row">
+{% for posts in posts %}
+    <div class="card" style="width: 18rem; margin-right: 1%;">
+      <img class="card-img-top" src="{{posts.image.url}}" alt="Card image cap" style="height: 20rem;">
+      <div class="card-body">
+        <p class="card-text" id="likeCount">{{posts.title}}</p>
+        <button class="btn btn-success likeButton" value="{{posts.id}}">Like</button>
+        <p>Likes: {{posts.get_count}}</p>
+
+      </div>
+    </div>
+
+{% endfor %}
+        </div>
+</div>
+
+
+
+{% endblock %}

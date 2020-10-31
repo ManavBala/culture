@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="jumbotron" style="width: 75%; margin: auto; background-color: #343A40; color:white;">
+  <h1 style="margin-top: -3%;">Login</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        {{form|crispy}}
+        <span><p>Don't have an account register <a href="/register">here</a></p></span>
+        <button type="submit" class="btn btn-md btn-primary">Login</button>
+    </form>
+</div>
+
+{% endblock %}

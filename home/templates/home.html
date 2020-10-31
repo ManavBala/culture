@@ -1,0 +1,71 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Hello, world!</title>
+
+  </head>
+  <body style="background: url('{% static 'secondBG.jpg' %}') no-repeat center center fixed; height:100%;background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark newNav">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="https://previews.123rf.com/images/vectorcarrot/vectorcarrot1808/vectorcarrot180800052/108852594-illustration-of-mexican-sugar-skull-day-of-the-dead-dia-de-los-muertos-.jpg" width="50" height="50" alt="">
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active navTitle">
+        <a class="nav-link navHead" href="{% url 'article' %}" style="font-size:25px;">Article<span class="sr-only">(current)</span></a>
+        </li>
+      <li class="nav-item active navTitle">
+        <a class="nav-link navHead" href="{% url 'art' %}" style="font-size:25px;">Art Competition</a>
+      </li>
+      <li class="nav-item active navTitle">
+        <a class="nav-link navHead" href="{% url 'submit' %}" style="font-size:25px;">Submit Art</a>
+      </li>
+       <li class="nav-item active navTitle">
+        <a class="nav-link navHead" href="{% url 'quiz' %}" style="font-size:25px;">Quiz</a>
+      </li>
+      <li class="nav-item dropdown navTitle">
+        <a class="nav-link navHead" href="{% url 'video' %}"  style="font-size:25px;">
+          Videos
+        </a>
+
+      </li>
+
+
+
+    </ul>
+
+  </div>
+      {% if user.is_authenticated %}
+      <h3 class="navHead" style="color: white; margin-right: 4%;">Hola {{request.user.username}}!</h3>
+      <a class="btn btn-md btn-outline-danger float-right" href="/logout">Logout</a>
+      {% else %}
+      <a class="btn btn-lg btn-outline-success float-right" style="margin-right: 1%;" href="/register">Register</a>
+      <a class="btn btn-lg btn-outline-primary float-right" href="/login">Login</a>
+      {% endif %}
+</div>
+
+    {% block content %}
+
+      {% endblock %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <script src="{% static 'js/jqueryCode.js' %}"></script>
+  <script src='http://use.edgefonts.net/flavors.js'></script>
+
+  </body>

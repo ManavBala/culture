@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% block title %} Admin page {% endblock %}
+
+{% block content %}
+
+<div class="jumbotron" style="background: none;">
+    <div class="row">
+{% for posts in posts %}
+    <div class="card" style="width: 18rem; margin-right: 1%;">
+      <img class="card-img-top" src="{{posts.image.url}}" alt="Card image cap" style="height: 20rem;">
+      <div class="card-body">
+        <p class="card-text">{{posts.title}}</p>
+          <button class="btn btn-primary approveButton" value="{{posts.id}}">Approve</button>
+      </div>
+    </div>
+
+{% endfor %}
+        </div>
+</div>
+
+
+{% endblock %}

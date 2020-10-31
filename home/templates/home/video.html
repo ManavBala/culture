@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block title %} Video {% endblock %}
+
+{% block content %}
+
+
+<section style="display: flex;
+flex-direction: column;
+align-items: center;">
+    <video width="1000" height="600" controls style="margin:auto; text-align: center;">
+    <source src="{% static 'dia de muertos.mp4' %}" type="video/mp4" style="margin:auto;">
+    </video>
+
+</section>
+
+{% endblock %}

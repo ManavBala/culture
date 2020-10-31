@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+
+{% block title %} Quiz {% endblock %}
+
+{% block content %}
+<div class="jumbotron" style="background: #343A40; margin: auto; width:60%; color:white; height: 100%;">
+    <h4>{{quiz.title}}</h4>
+
+
+    <div class="form-check">
+      <label><input type="radio" name="quizSelection" value=1>Male</label>
+    </div>
+
+    <div class="form-check">
+        <label><input type="radio" name="quizSelection" value=2>Female</label>
+    </div>
+
+    <div class="form-check">
+        <label><input type="radio" name="quizSelection" value=3>Female</label>
+    </div>
+
+    <button id="quizSubmit" type="submit" value={{quiz.id}} class="btn btn-md btn-primary" style="margin-top:2.5%;">Submit Answer</button>
+</div>
+
+{% endblock %}

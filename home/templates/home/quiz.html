@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+{% block title %} Quizzes {% endblock %}
+{% block content %}
+
+<div style="margin-top: 1%;">
+  {% for quiz in quiz %}
+<div class="card" style="margin:1% auto auto auto; width: 40%; background-color: #343A40; color: white;">
+  <h5 class="card-header">{{quiz.title}}</h5>
+  <div class="card-body">
+
+    <div class="form-check">
+      <label><input type="radio" name="quizSelection" value=1>{{quiz.option1}}</label>
+    </div>
+
+    <div class="form-check">
+        <label><input type="radio" name="quizSelection" value=2>{{quiz.option2}}</label>
+    </div>
+
+    <div class="form-check">
+        <label><input type="radio" name="quizSelection" value=3>{{quiz.option3}}</label>
+    </div>
+    <button  value={{quiz.id}} class="btn btn-primary quizSubmit">Submit Quiz</button>
+  </div>
+</div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
